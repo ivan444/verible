@@ -43,6 +43,8 @@ verible-verilog-syntax: usage: bazel-bin/verilog/tools/syntax/verible-verilog-sy
   Flags from verilog/tools/syntax/verilog_syntax.cc:
     --error_limit (Limit the number of syntax errors reported. (0: unlimited));
       default: 0;
+    --export_json (Uses JSON for output. Intended to be used as an input for
+      other tools.); default: false;
     --lang (Selects language variant to parse. Options:
       auto: SystemVerilog-2017, but may auto-detect alternate parsing modes
       sv: strict SystemVerilog-2017, with explicit alternate parsing modes
@@ -52,10 +54,12 @@ verible-verilog-syntax: usage: bazel-bin/verilog/tools/syntax/verible-verilog-sy
       default: false;
     --printtokens (Prints all lexed and filtered tokens); default: false;
     --printtree (Whether or not to print the tree); default: false;
+    --show_diagnostic_context (prints an additional line on which the diagnostic
+      was found,followed by a line with a position marker); default: false;
     --verifytree (Verifies that all tokens are parsed into tree, prints
       unmatched tokens); default: false;
 ```
 
 ## Version
 
-Generated on 2021-02-17 16:04:01 -0800 from [e8a909e](https://github.com/google/verible/commit/e8a909e8d8e5dcf8d560cf5a110fd7d57ee41bb9)
+Generated on 2021-04-14 12:26:30 -0700 from [47fbcbb](https://github.com/google/verible/commit/47fbcbb96a51d07e393716817b1d0ca373eaa15b)

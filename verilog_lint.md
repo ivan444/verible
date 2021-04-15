@@ -68,6 +68,8 @@ verible-verilog-lint: usage: bazel-bin/verilog/tools/lint/verible-verilog-lint [
       default: true;
     --parse_fatal (If true, exit nonzero if there are any syntax errors.);
       default: true;
+    --show_diagnostic_context (prints an additional line on which the diagnostic
+      was found,followed by a line with a position marker); default: false;
 ```
 
 ## Lint Rules
@@ -153,7 +155,7 @@ Do not use defparam. See:[Style: defparam].
 Enabled by default: true
 
 ### forbid-line-continuations
-Checks that there are no occurrences of `'\'` when breaking the string literal line.Use concatenation operator with braces instead. See [Style: forbid-line-continuations].
+Checks that there are no occurrences of `'\'` when breaking the string literal line. Use concatenation operator with braces instead. See [Style: forbid-line-continuations].
 
 Enabled by default: true
 
@@ -203,6 +205,11 @@ Enabled by default: true
 Checks that every macro name follows ALL_CAPS naming convention.  Exception: UVM-like macros.  See [Style: defines].
 
 Enabled by default: true
+
+### macro-string-concatenation
+Concatenation will not be evaluated here. Use `"...`" instead. See [Style: defines].
+
+Enabled by default: false
 
 ### mismatched-labels
 Labels mismatch. See:[Style: mismatched-labels].
@@ -284,6 +291,11 @@ Checks that plusargs are always assigned a value, by ensuring that plusargs are 
 
 Enabled by default: true
 
+### port-name-suffix
+Check that port names end with _i for inputs, _o for outputs and _io for inouts. Alternatively, for active-low signals use _n[io], for differential pairs use _n[io] and _p[io]. See [Style: suffixes-for-signals-and-types].
+
+Enabled by default: false
+
 ### positive-meaning-parameter-name
 Checks that no parameter name starts with 'disable', using positive naming (starting with 'enable') is recommended. See [Style: binary-parameters].
 
@@ -306,6 +318,9 @@ Enabled by default: false
 
 ### struct-union-name-style
 Checks that `struct` and `union` names use lower_snake_case naming convention and end with '_t'. See [Style: struct-union-conventions].
+##### Parameters
+ * `exceptions` (Comma-separated list of allowed upper-case elements, such as unit-names. Default: Empty)
+
 
 Enabled by default: true
 
@@ -354,4 +369,4 @@ Enabled by default: true
 
 ## Version
 
-Generated on 2021-02-17 16:04:01 -0800 from [e8a909e](https://github.com/google/verible/commit/e8a909e8d8e5dcf8d560cf5a110fd7d57ee41bb9)
+Generated on 2021-04-14 12:26:30 -0700 from [47fbcbb](https://github.com/google/verible/commit/47fbcbb96a51d07e393716817b1d0ca373eaa15b)

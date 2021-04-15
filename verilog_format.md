@@ -93,6 +93,7 @@ To pipe from stdin, use '-' as <file>.
     --try_wrap_long_lines (If true, let the formatter attempt to optimize line
       wrapping decisions where wrapping is needed, else leave them unformatted.
       This is a short-term measure to reduce risk-of-harm.); default: false;
+    --verbose (Be more verbose.); default: false;
     --verify_convergence (If true, and not incrementally formatting with
       --lines, verify that re-formatting the formatted output yields no further
       changes, i.e. formatting is convergent.); default: true;
@@ -100,4 +101,4 @@ To pipe from stdin, use '-' as <file>.
 
 ## Version
 
-Generated on 2021-02-17 16:04:01 -0800 from [e8a909e](https://github.com/google/verible/commit/e8a909e8d8e5dcf8d560cf5a110fd7d57ee41bb9)
+Generated on 2021-04-14 12:26:30 -0700 from [47fbcbb](https://github.com/google/verible/commit/47fbcbb96a51d07e393716817b1d0ca373eaa15b)
