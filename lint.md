@@ -296,4 +296,4 @@ Enabled by default: true
 
 ## Version
 
-Generated on 2021-04-16 07:39:06 -0700 from [ba38eca](https://github.com/google/verible/commit/ba38eca55d4406552b9431483917bf4240f40bba)
+Generated on 2021-04-20 07:43:08 -0700 from [6b827de](https://github.com/google/verible/commit/6b827debc9dbd7da2d1a4adad8a16113e0083ac0)
