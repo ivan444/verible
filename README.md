@@ -1,13 +1,16 @@
 ---
 ---
 
-# Verible
+# ![](./img/verible-logo-headline.png)Verible
+
+
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Continuous Integration](../../workflows/verible-ci/badge.svg)](../../actions/workflows/verible-ci.yml)
+[![Continuous Integration](https://github.com/chipsalliance/verible/workflows/verible-ci/badge.svg)](https://github.com/chipsalliance/verible/actions/workflows/verible-ci.yml)
+[![codecov](https://codecov.io/gh/chipsalliance/verible/branch/master/graph/badge.svg?token=5f656dpmDT)](https://codecov.io/gh/chipsalliance/verible)
 
 <!--*
-freshness: { owner: 'fangism' reviewed: '2020-10-08' }
+freshness: { owner: 'hzeller' reviewed: '2020-10-08' }
 *-->
 
 The Verible project's main mission is to parse SystemVerilog (IEEE 1800-2017)
@@ -42,8 +45,11 @@ guide and the [development resources](./doc/development.md).
 
 Verible's code base is written in C++.
 
-To build, you need the [bazel] build system and a C++11 compatible compiler
-(e.g. >= g++-7; Using clang currently fails to compile the m4 dependency).
+To build, you need the [bazel] build system and a C++17 compatible compiler
+(e.g. >= g++-9), as well as python3.
+
+Use your package manager to install the dependencies; on a system with
+the nix package manager simply run `nix-shell` to get a build environment.
 
 ```bash
 # Build all tools and libraries
@@ -113,9 +119,10 @@ violations.
 
 Features:
 
-*   Style guide citations in diagnostics
-*   Rule deck configurability
-*   Waiver mechanisms: in-file, external waiver file
+ * Style guide citations in diagnostics
+ * Rule deck configurability
+ * Waiver mechanisms: in-file, external waiver file
+ * [Github SystemVerilog linter action][github-lint-action] available.
 
 Documentation:
 
@@ -132,17 +139,27 @@ editor-independent consistency.
 
 Features (various degress of work-in-progress):
 
-*   Corrects indentation
-*   Corrects inter-token spacing, with syntax context awareness
-*   Line-wrapping to a column limit
-*   Support for incremental formatting, only touched changed lines.
-*   Interactive formatting: accept or decline formatting changes
-*   Tabular alignment
+ * Corrects indentation
+ * Corrects inter-token spacing, with syntax context awareness
+ * Line-wrapping to a column limit
+ * Support for incremental formatting, only touched changed lines.
+ * Interactive formatting: accept or decline formatting changes
+ * Tabular alignment
+ * [Github SystemVerilog formatter action][github-format-action] available.
 
 <!--
 TODO(fangism): a demo GIF animation here.
-See https://github.com/google/verible/issues/528
+See https://github.com/chipsalliance/verible/issues/528
 -->
+
+### Language Server
+
+The [`verible-verilog-ls`](./verilog/tools/ls) is a language server that
+provides the functionalities that come with the Verible command line tools
+also directly in your edtior.
+
+It implements the standardized [language server protocol] that is supported
+by a myriad of editors and IDEs.
 
 ### Lexical Diff
 
@@ -166,7 +183,7 @@ potentially sensitive test cases with tool vendors.
 
 <!--
 TODO(fangism): a short demo GIF animation here.
-See https://github.com/google/verible/issues/528
+See https://github.com/chipsalliance/verible/issues/528
 -->
 
 ### Preprocessor
@@ -194,8 +211,8 @@ abstract syntax tree (AST). If you are interested in collaborating, contact us.
 
 [bazel]: https://bazel.build/
 [SV-LRM]: https://ieeexplore.ieee.org/document/8299595
-[lint-rule-list]: https://google.github.io/verible/lint.html
-[lint-rule-list_enum-name-style]: https://google.github.io/verible/lint.html#enum-name-style
-[lint-rule-list_line-length]: https://google.github.io/verible/lint.html#line-length
-[lint-rule-list_no-tabs]: https://google.github.io/verible/lint.html#no-tabs
-[binary releases]: https://github.com/google/verible/releases
+[lint-rule-list]: https://chipsalliance.github.io/verible/lint.html
+[github-lint-action]: https://github.com/chipsalliance/verible-linter-action
+[github-format-action]: https://github.com/chipsalliance/verible-formatter-action
+[binary releases]: https://github.com/chipsalliance/verible/releases
+[language server protocol]: https://microsoft.github.io/language-server-protocol/

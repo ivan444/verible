@@ -1,13 +1,16 @@
 ---
 ---
 
-# Verible
+# ![](./img/verible-logo-headline.png)Verible
+
+
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Continuous Integration](../../workflows/verible-ci/badge.svg)](../../actions/workflows/verible-ci.yml)
+[![Continuous Integration](https://github.com/chipsalliance/verible/workflows/verible-ci/badge.svg)](https://github.com/chipsalliance/verible/actions/workflows/verible-ci.yml)
+[![codecov](https://codecov.io/gh/chipsalliance/verible/branch/master/graph/badge.svg?token=5f656dpmDT)](https://codecov.io/gh/chipsalliance/verible)
 
 <!--*
-freshness: { owner: 'fangism' reviewed: '2020-10-08' }
+freshness: { owner: 'hzeller' reviewed: '2020-10-08' }
 *-->
 
 The Verible project's main mission is to parse SystemVerilog (IEEE 1800-2017)
@@ -55,4 +58,4 @@ See the [README file for further information.](README.md)
 
 ## Version
 
-Generated on 2021-04-20 07:43:08 -0700 from [6b827de](https://github.com/google/verible/commit/6b827debc9dbd7da2d1a4adad8a16113e0083ac0)
+Generated on 2021-11-09 17:10:55 +0100 from [d98e3b86](https://github.com/google/verible/commit/d98e3b86e5ab6de77816de4e71d61860b5c1ff65)
