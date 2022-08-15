@@ -43,9 +43,11 @@ verible-verilog-lint: usage: bazel-bin/verilog/tools/lint/verible-verilog-lint [
 
   Flags from verilog/tools/lint/verilog_lint.cc:
     --autofix (autofix mode; one of
-      [no|patch-interactive|patch|inplace-interactive|inplace]); default: no;
+      [no|patch-interactive|patch|inplace-interactive|inplace|generate-waiver]);
+      default: no;
     --autofix_output_file (File to write a patch with autofixes to if
-      --autofix=patch or --autofix=patch-interactive); default: "";
+      --autofix=patch or --autofix=patch-interactive or a waiver file if
+      --autofix=generate-waiver); default: "";
     --check_syntax (If true, check for lexical and syntax errors, otherwise
       ignore.); default: true;
     --generate_markdown (If true, print the description of every rule formatted
@@ -102,7 +104,7 @@ Check that constraint names follow the lower_snake_case convention and end with 
 Enabled by default: true
 
 ### create-object-name-match
-Checks that the 'name' argument of `type_id::create()` matches the name of the variable to which it is assigned. See [Verification-Style: naming].
+Checks that the 'name' argument of `type_id::create()` matches the name of the variable to which it is assigned. See [Style: uvm-naming].
 
 Enabled by default: true
 
@@ -160,7 +162,7 @@ Checks that there are no occurrences of `\` when breaking the string literal lin
 Enabled by default: true
 
 ### forbidden-macro
-Checks that no forbidden macro calls are used. See [Verification-Style: logging].
+Checks that no forbidden macro calls are used. See [Style: uvm-logging].
 
 Enabled by default: true
 
@@ -180,7 +182,7 @@ Checks that `interface` names use lower_snake_case naming convention and end wit
 Enabled by default: true
 
 ### invalid-system-task-function
-Checks that no forbidden system tasks or functions are used. These consist of the following functions: `$psprintf`, `$random`, and `$dist_*`. As well as non-LRM function `$srandom`. See [Verification-Style: forbidden-system-functions].
+Checks that no forbidden system tasks or functions are used. These consist of the following functions: `$psprintf`, `$random`, and `$dist_*`. As well as non-LRM function `$srandom`. See [Style: forbidden-system-functions].
 
 Enabled by default: true
 
@@ -366,7 +368,7 @@ Checks that unpacked dimension ranges are declared in big-endian order `[0:N-1]`
 Enabled by default: true
 
 ### uvm-macro-semicolon
-Checks that no `uvm_* macro calls end with ';'. See [Verification-Style: uvm-macro-semicolon-convention].
+Checks that no `uvm_* macro calls end with ';'. See [Style: uvm-macro-semicolon-convention].
 
 Enabled by default: false
 
@@ -376,11 +378,11 @@ Checks that there are no generate-begin blocks inside a generate region. See [St
 Enabled by default: true
 
 ### void-cast
-Checks that void casts do not contain certain function/method calls.  See [Verification-Style: void-casts].
+Checks that void casts do not contain certain function/method calls.  See [Style: void-casts].
 
 Enabled by default: true
 
 
 ## Version
 
-Generated on 2022-01-27 17:26:51 -0800 from [0834c7f8](https://github.com/google/verible/commit/0834c7f8bd525b6f4727c05961f4715c49f26900)
+Generated on 2022-08-13 17:46:14 -0700 from [6b272425](https://github.com/google/verible/commit/6b2724257d54225491ee48214fa08f4ddfb4d29c)
